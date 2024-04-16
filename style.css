@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root{
+	--cor0:#FFE7C1;
+	--cor1:#645CAA;
+	--cor2:#A084CA;
+	--cor3:#BFACE0;
+	--cor4:#EBC7E8;
+	--cor5:#D9C4FF;
+}
+
+/*Ajuste gerais */
+* {
+	box-sizing: border-box;
+}
+body{
+	margin: 0;
+	font-family: "Shantell Sans", sans-serif;
+	background:linear-gradient(#BFACE0, #645CAA,#A084CA,#BFACE0, #645CAA,#A084CA);
+
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+main{
+	flex-grow: 1;
+	display: flex;
+	flex-direction: row;
+	align-items:stretch;
+	flex-wrap: wrap;
+}
+h2 {
+	text-transform: uppercase;
+}
+
+/* cabeçalho e rodapé */
+header, footer{
+	width: 100%;
+	padding: 20px;
+	overflow: hidden;
+	text-align: center;
+	background:linear-gradient(#645CAA, #FFE7C1,#645CAA);
+}
+
+footer{
+	text-align: right;
+	padding-top:90px;
+	color:#444;
+}
+
+/*Barra de navegação*/
+#navbar{
+	width: 100%;
+	overflow: hidden;
+	background:var(--cor3);
+}
+#navbar ul{
+	list-style-type: none;/*Tira as bolinhas*/
+	margin: 0;
+	padding: 0;
+}
+#navbar ul li {
+	float: left;/*Pra ficar um do lado do outro	*/
+
+}
+#navbar ul li a {
+	text-decoration:none ; /*tira a formatação de link	*/
+	padding: 14px 16px;
+	display: block;
+	color: black;
+}
+#navbar ul li a:hover {
+	color: var(--cor4);
+	background: var(--cor2);
+}
+
+/*colunas laterais*/
+.coluna{
+	width:20% ;
+	padding:20px ;
+	float: left;
+}
+.coluna a { /*link não visitado*/
+	color: var(--cor0);
+}
+
+.coluna a:visited { /*link visitado*/
+	color: var(--cor5);
+}
+
+
+/*Coluna central */
+article {
+	width: 60%;
+	padding: 20px;
+	float: left;
+	background:var(--cor5);
+
+	flex-grow: 1;
+}
+article p {
+	text-align: justify;
+}
+article img {
+	width: 60%;
+	display: block;
+	margin: auto;
+}
+
+
+/*responsividade*/
+/*telas médias*/
+@media screen and (max-width: 800px){
+	.coluna{
+		width: 30%;
+	}
+	article{
+		width: 70%;
+	}
+	aside.coluna{
+		/*flex-basis: content;x
+		padding: 0;
+		width: 100%;*/
+		display: none;
+	}
+}
+/*telas pequenas*/
+
+@media screen and (max-width: 600px){
+	.coluna{
+		width: 100%;
+	}
+	article{
+		width: 100%;
+	}
+}
+

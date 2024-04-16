@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+		:root{
+			--cor0:#FFE7C1;
+			--cor1:#645CAA;
+			--cor2:#A084CA;
+			--cor3:#BFACE0;
+			--cor4:#EBC7E8;
+			--cor5:#D9C4FF;
+}
+		article div{
+			max-width: 400px;
+			margin: auto;
+			text-align: center;
+
+
+		}
+		article div p {
+			text-align: center;
+		}
+		#bts, #btn{
+			background-color: var(--cor1);
+			color: var(--cor0);
+			border-color: black;
+			border-radius: 50px;
+			font-size: 1.5em;
+			padding: 15px 20px;
+			margin: 10px;
+
+		}
+		#bts:hover, #btn:hover {
+			background-color: var(--cor0);
+			color: var(--cor1);
+			border-color: white;
+		}
+		@media (hover:none){
+			#btn:hover {
+				background-color: var(--cor1);
+				color: var(--cor0);
+				border-color: black;
+			}
+		}
+		@media screen and (max-width 600px){
+			.coluna{
+				display: none;
+			}
+		}
+
+		
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<script type="text/javascript">
+		function runaway() {
+			let distanciaX = Math.round(Math.random()*150)+150;
+			let sinalX = Math.round(Math.random()*2-1); 
+			let distanciaY = Math.round(Math.random()*150)+150;
+			let sinalY = Math.round(Math.random()*2-1); 
+			anime({
+				targets: '#btn',
+				translateX: '+=' + (distanciaX*sinalX),
+				translateY: '+=' + (distanciaY*sinalY),
+				easing: 'easeOutCirc'
+			});
+		}
+	</script>
+</head>
+<body>
+<!-- Cabeçalho -->
+<header>
+	<h1>ESPERO QUE TENHA GOSTADO</h1>
+
+	<p>(PARA MAIS INFORMÇÃO, ESTOU DISPONIVEL PARA CONTATOS)</p>
+</header>
+
+<!-- Barra de navegaçao-->
+<nav id ="navbar">
+	<ul>
+		<li><a href="index.html">Pagina inicial</a></li>
+		<li><a href="programacao.html">Programação</a></li>
+		<li><a href="opinião.html">Dê sua opinião!!!</a></li>
+	</ul>
+</nav>
+
+<!-- conteudo principal -->
+<main>
+	<!-- coluna á esquerda -->
+	<nav class="coluna">
+	</nav>
+
+	<!-- coluna central -->
+	<article>
+		<div>
+			<p>GOSTOU DO NOSSO CONTEÚDO?</p>
+			<!-- <button id="bts">Amei &#128525;</button> -->
+			<form action="https://89907414-1f18-4d45-9d3a-4b2a5c9ac587-00-nle758encixk.riker.replit.dev/manu/index.php" method="post">
+				<input id="bts" type="submit" value="Amei &#128525" name="sub">
+				<button id="btn"
+				onmouseover="runaway()"
+				onclick="runaway()"
+				>Odiei &#129326;</button>
+				
+			</form>
+			<!-- <button id="btn" onmouseover="runaway();">Odiei &#129326;</button> -->
+		</div>
+
+	</article>
+
+	<!-- coluna a direita -->
+	<aside class="coluna"></aside>
+
+</main>
+<!-- rodapé -->
+<footer>
+	<p>Projeto Integrador</p>
+	<p>Desenvolvido por:Manu</p>
+	<p>Para o curso Jovem Programadora - Senac vv</p>
+
+</footer>
+
+
+
+</body>
+</html>
